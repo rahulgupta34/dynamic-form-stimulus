@@ -72,3 +72,4 @@ group :test do
 end
 
 gem "requestjs-rails", "~> 0.0.9"
+gem "pry"
