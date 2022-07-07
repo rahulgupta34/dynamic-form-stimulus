@@ -1,4 +1,13 @@
 <h1>Home#index</h1>
+<%= t("hello") %><br>
+email = <%= t("name") %><br>
+
+User Profile Info = <%= t("user_context.user") %>
+<br>
+<%= link_to t("header.menu.home"), "/posts" %> &nbsp; &nbsp; &nbsp;
+<%= link_to t("header.menu.news"), "/posts" %>
+<br>
+
 <div data-controller="hello">
     
     <div data-hello-target="add_form_field" id="results">
