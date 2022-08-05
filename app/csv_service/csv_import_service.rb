@@ -1,6 +1,6 @@
-module HomeHelper
-    
-    def call(file)
+class CsvImportService
+   require 'csv'
+   def call(file)
         csv_text = File.read(file)
         @data = CSV.parse(csv_text, headers: true)
         @data.each do |row|
@@ -12,6 +12,6 @@ module HomeHelper
         end
         @count = CsvDatum.count
         flash[:notice] = "Total #{@count} has been imported."
-    end
+   end
     
 end

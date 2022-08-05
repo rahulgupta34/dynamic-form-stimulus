@@ -1,0 +1,27 @@
+<h1>This is dynamic drop down select</h1>
+<div data-controller="hello" data-hello-url-value="/posts">
+    <%= select_tag "country",  options_for_select([ "VISA", "MasterCard" ]), include_blank: true, data: { hello_target: "rahul",action: "change->hello#getCountry" } %>
+</div>
+<br/>
+<div>
+    <%= form_with url: csv_path, method: :post do |f| %>
+            <%= f.file_field :file_import, accept: ".csv" %>
+            <br/></br>
+            <%= f.button "Import CSV" %>
+    <% end %>
+</div>
+<br/>
+<%= link_to "Export CSV Users", drop_down_path(format: "csv") %>
+
+<p style="color:green;">
+    <% if notice %>
+          <%= notice %>
+    <% end %>
+</p>
+<div>
+    <% @results.each do |row| %>
+        <%= row.name %><br/>
+        <%= row.email %><br/>
+        <%= row.age %><br/>
+    <% end %>
+</div>

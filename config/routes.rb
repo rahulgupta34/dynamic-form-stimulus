@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root "home#index"
   get "/form_add", to: "home#add_form"
+  get "/drop_down", to: "home#dynamic_dropdown"
+  post "/csv", to: "home#csv_import"
 end
